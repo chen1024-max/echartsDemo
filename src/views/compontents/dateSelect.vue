@@ -3,18 +3,20 @@
   <div class="date_content">
     <div class="selectDate"><span>选择时间：</span></div>
 
-    <div v-for="(item, index) in btnName"
-         :key="index">
-      <van-button type="default"
-                  :class="{ currentBtn: currentBtn == item.name }"
-                  @click="choiceDate(item.name)">{{ item.name }}</van-button>
+    <div v-for="(item, index) in btnName" :key="index">
+      <van-button
+        type="default"
+        :class="{ currentBtn: currentBtn == item.name }"
+        @click="choiceDate(item.name)"
+        >{{ item.name }}</van-button
+      >
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       btnName: [
         { name: "全部" },
@@ -22,11 +24,11 @@ export default {
         { name: "90天" },
         { name: "自定义" }
       ],
-      currentBtn: null //当前选中的按钮
+      currentBtn: "全部" //当前选中的按钮,默认全部
     };
   },
   methods: {
-    choiceDate (val) {
+    choiceDate(val) {
       this.currentBtn = val;
     }
   }
@@ -50,6 +52,7 @@ export default {
     padding: 5px 13px;
     height: 24px;
     border: solid 1px white;
+    font-size: 14px;
   }
   .currentBtn {
     border: solid 1px #007aff;

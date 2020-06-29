@@ -5,13 +5,20 @@
       <img src="../../assets/学生年级分布1.png" alt="" />
       <span>学生年级分布</span>
     </div>
-    <div class="content"></div>
+    <div class="content">
+      <echarts-pie></echarts-pie>
+    </div>
     <div class="proportion"></div>
   </div>
 </template>
 
 <script>
-export default {};
+import EchartsPie from "../../components/gradePie";
+export default {
+  components: {
+    EchartsPie
+  }
+};
 </script>
 
 <style lang="less" scoped>

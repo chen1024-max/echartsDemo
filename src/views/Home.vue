@@ -16,7 +16,9 @@
       <consumption-capacity class="listshow7"></consumption-capacity>
       <consumption-participation class="listshow8"></consumption-participation>
     </div>
-    <div class="footer" @click="backTop" v-show="isBackTop">顶部</div>
+    <div class="footer" @click="backTop" v-show="isBackTop">
+      <img src="../assets/返回顶部.png" alt="" />
+    </div>
   </div>
 </template>
 
@@ -116,7 +118,11 @@ export default {
 }
 .footer {
   position: fixed;
-  bottom: 35px;
-  right: 25px;
+  bottom: 74px;
+  right: 18px;
+  img {
+    width: 29px;
+    height: 29px;
+  }
 }
 </style>

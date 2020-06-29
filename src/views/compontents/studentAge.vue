@@ -5,13 +5,20 @@
       <img src="../../assets/学生年龄分布1.png" alt="" />
       <span>学生年龄分布</span>
     </div>
-    <div class="content"></div>
+    <div class="content">
+      <echarts-pie></echarts-pie>
+    </div>
     <div class="proportion"></div>
   </div>
 </template>
 
 <script>
-export default {};
+import EchartsPie from "../../components/agePie";
+export default {
+  components: {
+    EchartsPie
+  }
+};
 </script>
 
 <style lang="less" scoped>

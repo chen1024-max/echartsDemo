@@ -88,8 +88,9 @@ export default {
     margin-bottom: 8px;
   }
   span {
-    transform: scale(0.94, 1);
-    line-height: 12px;
+    transform: scale(0.94);
+    line-height: 16px;
+    text-align: center;
   }
 }
 </style>

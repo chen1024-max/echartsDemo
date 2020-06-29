@@ -5,13 +5,23 @@
       <img src="../../assets/消费能力分析1.png" alt="" />
       <span>消费能力</span>
     </div>
-    <div class="content"></div>
+    <div class="content">
+      <echarts-bar></echarts-bar>
+    </div>
     <div class="proportion"></div>
   </div>
 </template>
 
 <script>
-export default {};
+import EchartsBar from "../../components/consumptionBar";
+export default {
+  components: {
+    EchartsBar
+  },
+  data() {
+    return {};
+  }
+};
 </script>
 
 <style lang="less" scoped>
@@ -36,5 +46,9 @@ export default {};
     letter-spacing: 0px;
     color: #000000;
   }
+}
+.proportion {
+  width: 100%;
+  height: 16px;
 }
 </style>

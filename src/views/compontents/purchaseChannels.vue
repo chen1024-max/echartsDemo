@@ -5,13 +5,20 @@
       <img src="../../assets/购买途径1.png" alt="" />
       <span>购买途径</span>
     </div>
-    <div class="content"></div>
+    <div class="content">
+      <echarts-bar></echarts-bar>
+    </div>
     <div class="proportion"></div>
   </div>
 </template>
 
 <script>
-export default {};
+import EchartsBar from "../../components/purchaseBar.vue";
+export default {
+  components: {
+    EchartsBar
+  }
+};
 </script>
 
 <style lang="less" scoped>
@@ -36,5 +43,13 @@ export default {};
     letter-spacing: 0px;
     color: #000000;
   }
+}
+.content {
+  display: flex;
+  justify-content: center;
+}
+.proportion {
+  width: 100%;
+  height: 19px;
 }
 </style>

@@ -110,7 +110,7 @@ export default {
   padding: 0 8px;
 }
 .content {
-  padding: 0 8px;
+  padding: 0 8px 29px 8px;
   .list {
     width: 100%;
     height: 500px;
@@ -121,8 +121,8 @@ export default {
   bottom: 74px;
   right: 18px;
   img {
-    width: 29px;
-    height: 29px;
+    width: 41px;
+    height: 41px;
   }
 }
 </style>

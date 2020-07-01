@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "date-fns": "^2.14.0",
     "echarts": "^4.8.0",
     "lib-flexible": "^0.3.2",
     "postcss-px2rem-exclude": "0.0.6",

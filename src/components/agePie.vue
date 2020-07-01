@@ -19,11 +19,11 @@ export default {
           pageIconSize: 10,
           orient: "vertical",
           icon: "circle",
-          right: 10,
-          top: 20,
+          right: 0,
+          bottom: 10,
           itemWidth: 6,
           itemHeight: 6,
-          data: ["直接访", "邮件营", "联盟广", "视频广", "搜索引"],
+          data: ["直接访", "邮件营", "联盟广", "视频广", "搜索引导"],
           textStyle: {
             fontSize: 12,
             lineHeight: 14,
@@ -36,7 +36,7 @@ export default {
             name: "访问来源",
             type: "pie",
             radius: ["40%", "55%"],
-            center: ["34%", "60%"],
+            center: ["34%", "50%"],
             avoidLabelOverlap: false, //是否在数据和为0（一般情况下所有数据为0） 的时候不显示扇区
             hoverAnimation: false, //不开启高亮
             clockwise: false, //饼图的扇区是否是顺时针排布
@@ -76,7 +76,7 @@ export default {
               { value: 310, name: "邮件营" },
               { value: 234, name: "联盟广" },
               { value: 135, name: "视频广" },
-              { value: 1548, name: "搜索引" }
+              { value: 1548, name: "搜索引导" }
             ]
           }
         ]

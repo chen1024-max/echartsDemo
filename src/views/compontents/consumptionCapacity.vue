@@ -32,6 +32,10 @@ export default {
   margin-top: 15px;
 }
 
+.content {
+  display: flex;
+  justify-content: center;
+}
 .title {
   padding: 15px 0 0 16px;
   display: flex;

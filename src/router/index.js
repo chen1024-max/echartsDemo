@@ -34,6 +34,8 @@ const path = exit ? "" : location.pathname.split("/").filter(i => i)[0];
 const router = new VueRouter({
   mode: "history",
   base: process.env.NODE_ENV === "development" ? "" : `${path || ""}`,
+  // mode: "hash",
+  // base: process.env.BASE_URL,
   routes
 });
 

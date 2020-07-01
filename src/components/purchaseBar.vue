@@ -83,7 +83,7 @@ export default {
             min: 0,
             axisLabel: {
               formatter: function(val) {
-                console.log(val);
+                // console.log(val);
                 if (val > 0) {
                   return val + "%";
                 } else {
@@ -110,7 +110,7 @@ export default {
               fontSize: 9,
               lineHeight: 11,
               formatter: function(params) {
-                console.log(params);
+                // console.log(params);
                 return (
                   dataTest[params.dataIndex] + "人" + "\n" + params.value + "%"
                 );

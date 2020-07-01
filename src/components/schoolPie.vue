@@ -19,8 +19,8 @@ export default {
           pageIconSize: 10,
           orient: "vertical",
           icon: "circle",
-          right: 10,
-          top: 20,
+          right: 0,
+          bottom: 10,
           itemWidth: 6,
           itemHeight: 6,
           data: [

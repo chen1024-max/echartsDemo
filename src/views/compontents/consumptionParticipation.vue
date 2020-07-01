@@ -9,9 +9,6 @@
       <van-dropdown-menu :overlay="false" class="left">
         <van-dropdown-item v-model="value1" :options="option1" />
       </van-dropdown-menu>
-      <van-dropdown-menu :overlay="false" class="right">
-        <van-dropdown-item v-model="value2" :options="option2" />
-      </van-dropdown-menu>
     </div>
     <div class="content">
       <echarts-bar></echarts-bar>
@@ -29,14 +26,9 @@ export default {
   data() {
     return {
       value1: 0,
-      value2: "a",
       option1: [
         { text: "未购买", value: 0 },
         { text: "已购买", value: 1 }
-      ],
-      option2: [
-        { text: "购买前", value: "a" },
-        { text: "购买后", value: "b" }
       ]
     };
   }
@@ -53,21 +45,19 @@ export default {
 * {
   box-sizing: border-box;
 }
+.content {
+  display: flex;
+  justify-content: center;
+}
 .dropdownMenu {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 0 18px;
-  .left {
-    /deep/ .van-popup--top {
-      top: 7px;
-      left: 26px;
-      width: 40%;
-      border-radius: 10px;
-      box-shadow: 1px 1px 7px 0px rgba(3, 0, 0, 0.35);
-    }
+  /deep/ .van-dropdown-menu__bar {
+    box-shadow: none;
   }
-  .right {
+  .left {
     /deep/ .van-popup--top {
       top: 7px;
       left: 58%;

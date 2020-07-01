@@ -11,11 +11,22 @@
         >{{ item.name }}</van-button
       >
     </div>
+    <datetime-popup
+      :popupShow="popupShow"
+      @cancel="getcancel"
+      @change="getchange"
+    ></datetime-popup>
   </div>
 </template>
 
 <script>
+import DatetimePopup from "../../components/DatetimePopup";
+import format from "date-fns/format";
+import subDays from "date-fns/subDays";
 export default {
+  components: {
+    DatetimePopup
+  },
   data() {
     return {
       btnName: [
@@ -24,12 +35,50 @@ export default {
         { name: "90天" },
         { name: "自定义" }
       ],
-      currentBtn: "全部" //当前选中的按钮,默认全部
+      currentBtn: "全部", //当前选中的按钮,默认全部
+      popupShow: false, // 是否显示自定义弹窗，传递给自定义按钮组件
+      timeRange: [] // 传递给父组件的数据
     };
   },
   methods: {
     choiceDate(val) {
+      this.timeRange = [];
       this.currentBtn = val;
+      if (val === "自定义") {
+        this.popupShow = true;
+      }
+      if (val === "全部") {
+        this.timeRange[0] = "";
+        this.timeRange[1] = "";
+      } else if (val === "30天") {
+        this.timeRange[0] =
+          format(subDays(new Date(), 30), "y-MM-dd") + " 00:00:00";
+        this.timeRange[1] =
+          format(subDays(new Date(), 1), "y-MM-dd") + " 00:00:00";
+      } else if (val === "90天") {
+        this.timeRange[0] =
+          format(subDays(new Date(), 90), "y-MM-dd") + " 00:00:00";
+        this.timeRange[1] =
+          format(subDays(new Date(), 1), "y-MM-dd") + " 00:00:00";
+      }
+      console.log(this.timeRange);
+      this.$emit("confirm", this.timeRange);
+    },
+    // 接收自定义按钮的时间
+    getchange(value) {
+      this.timeRange = [];
+      this.timeRange[0] = value[0] + " 00:00";
+      this.timeRange[1] = value[1] + " 23:59";
+      this.pushDateTime();
+    },
+    // 自定义按钮改变popuShow状态
+    getcancel() {
+      this.popupShow = false;
+    },
+    // 自定义按钮传递获取到的值
+    pushDateTime() {
+      console.log(this.timeRange);
+      this.$emit("confirm", this.timeRange);
     }
   }
 };

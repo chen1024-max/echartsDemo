@@ -20,7 +20,7 @@ export default {
           orient: "vertical",
           icon: "circle",
           right: 0,
-          top: 20,
+          bottom: 10,
           itemWidth: 6,
           itemHeight: 6,
           data: [
